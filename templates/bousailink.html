@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='ja'>
+    <head>
+        <meta charset='utf-8'/>
+        <title>防災リンク</title>
+        <link rel="stylesheet" href="static/css/bousailink.css"> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">      
+    </head>
+
+    <body>
+        <header id="header">
+            <h1>Sample</h1>
+            <!--urlはのちに追加-->
+            <nav>
+            <ul>
+                <li><a href="/" class="btn4">備蓄品</a></li>
+                <li><a href="/map" class="btn4">瑞穂区防災マップ</a></li>
+                <li><a href="/news" class="btn4">ニュース速報</a></li>
+                <li><a href="/link" class="btn4">おすすめ防災サイト</a></li>
+            </ul>
+            </nav>
+            <!--ここからscriptですがあっているのか不明です、、-->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            <script>
+            function FixedAnime() {
+                var headerH = $('#header').outerHeight(true);
+                var scroll = $(window).scrollTop();
+                if (scroll >= headerH){
+                $('#header').addClass('fixed');
+                }else{
+                $('#header').removeClass('fixed');
+                }
+            }
+            $(window).scroll(function () {
+                FixedAnime();
+            });
+            </script>
+        </header>
+        <main>
+            <h1>防災情報リンクサイト</h1>
+            <br>
+            <button onclick="window.open('https://www.city.takamatsu.kagawa.jp/')">高松市役所</button>
+            <br>
+            <button onclick="window.open('https://www.city.nagoya.jp/')">名古屋市</button>
+            <br>
+            <button onclick="window.open('https://www.mlit.go.jp/river/bousai/olympic/')">国土交通省防災ポータル</button>
+            <br>
+            <button onclick="window.open('https://www.jma.go.jp/jma/menu/menuflash.html')">防災情報-気象庁</button>
+            <br>
+            <button onclick="window.open('http://www.bousai.go.jp/')">防災情報のページ-内閣府</button>
+            <br>
+            <button onclick="window.open('https://www.river.go.jp/index')">川の防災情報-国土交通省</button>
+            <br>
+        </main>
+        
+
+    </body>
+</html>

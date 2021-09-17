@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/css/detail.css">
+    <title>備蓄品詳細</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <button class="btn btn--syntax" type="button" onclick="location.href='/'">  一覧に戻る</button><br>
+      </div>
+      <h1 class="logo">{{ details.name }}</h1>
+      
+    </header>
+
+    <main>
+      <h1>備蓄品詳細</h1>
+      <table id="maintable" border="1" >
+           <tr>
+             <th width="30%">備蓄品名</th>
+             <td>{{ details.name }}</td>
+           </tr>
+           <tr>
+             <th width="30%">ジャンル</th>
+             <td>{{ details.category }}</td>
+           </tr>
+           <tr>
+             <th>数</th>
+             <td>{{ details.number }}</td>
+           </tr>
+           <tr>
+             <th>期限</th>
+             <td>2024／04／03</td>
+           </tr>
+      </table>
+      <a href="/detail/hensyu/{{ details.id }}">編集する</a>
+    </main>
+
+    <footer>
+      <h2 class="footline">
+        <a>グループA防災アプリ</a>
+      </h2>
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <a href="bitikuitiran.html">備蓄品</a>
+        </li>
+        <li class="nav-list-item"><a href="bousaimap.html">防災マップ</a></li>
+        <li class="nav-list-item"><a href="bousainews.html">ニュース速報</a></li>
+        <li class="nav-list-item"><a href="bousailink.html">防災サイト</a></li>
+      </ul>
+    </footer>
+  </body>
+  
+</html>

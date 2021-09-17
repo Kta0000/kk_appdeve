@@ -1,0 +1,32 @@
+/* とりあえず完成？ */
+h1 {
+  padding-bottom: 3%;
+  padding-top: 5%;
+  color: blue;
+  text-align: center;
+}
+
+body{
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.btn--syntax,
+button.btn--teal{
+  color: white;
+  background-color: teal;
+}
+
+.btn--thistle,
+button.btn--thistle{
+  background-color: white;
+  color:teal;
+  border: 3px solid teal;
+}
+
+.form-group{
+  color: teal;
+}

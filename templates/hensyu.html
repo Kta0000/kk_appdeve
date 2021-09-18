@@ -12,6 +12,44 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+      h1 {
+        padding-bottom: 3%;
+        padding-top: 5%;
+        color: rgb(77, 130, 143);
+        text-align: center;
+      }
+
+      body{
+        padding-left: 10%;
+        padding-right: 10%;
+        background-color: rgb(188, 255, 193);
+        color: black;
+        text-align: center;
+      }
+
+      .btn--syntax,
+      button.btn--teal{
+        color: teal;
+        background-color: rgb(179, 236, 221);
+        border-color:teal
+      }
+
+      .btn--thistle,
+      button.btn--thistle{
+        background-color: white;
+        color:teal;
+        border: 3px solid teal;
+      }
+
+      .form-group{
+        color: teal;
+      }
+      main{
+        background-color: rgb(99, 153, 197);
+      }
+    </style>
+  
   </head>
 
   <body>
@@ -63,7 +101,7 @@
     <!-- 編集ボタン -->
   
     <!-- キャンセルボタンの追加の必要→ボタン設置済→ボタン押すと備蓄品一覧に遷移 -->
-    <button class="btn btn--syntax" type="button" onclick="location.href='bitikuitiran.html'">キャンセル</button>
+    <button class="btn btn--syntax" type="button" onclick="location.href='/detail/{{ hensyus.id }}'">キャンセル</button>
 
     <!-- リセットボタン -->
     <button class="btn btn--syntax" type="reset">リセット</button><br>

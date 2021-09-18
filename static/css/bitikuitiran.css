@@ -97,16 +97,17 @@ main h1:before {
 }
 
 .container {
-  background-color: rgb(243, 188, 188);
+  background-color: rgb(178, 238, 213);
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 85%;
+  border-radius: 20px;
   margin: 0 auto;
 }
 /* カテゴリーごと↓ */
 .item {
-  background-color: rgb(107, 202, 231);
+  background-color: rgb(174, 235, 253);
   height: 200px;
   width: 400px;
   margin-top: 20px;
@@ -117,6 +118,7 @@ main h1:before {
 /* カテゴリー名 */
 .item h2 {
   text-align: center;
+  color:#326f77
 }
 .item ul {
   list-style: none;

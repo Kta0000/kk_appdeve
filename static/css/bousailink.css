@@ -87,10 +87,14 @@ main button {
   width: 100%;
   margin: 0 auto;
   padding: 1.5rem 3.0rem;
-  background-color: #72c0f5;
+  background-color: #52aeec;
   border-radius: 8px;
 box-sizing: border-box;
   text-decoration: none;
   transition: 0.3s;
-  font-size: 16pt;
+  font-size: 18pt;
+  color:rgb(26, 48, 88)
+}
+main{
+  background-color: rgb(131, 183, 224);
 }

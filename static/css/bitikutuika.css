@@ -2,22 +2,23 @@
 h1 {
   padding-bottom: 3%;
   padding-top: 5%;
-  color: blue;
+  color: rgb(77, 130, 143);
   text-align: center;
 }
 
 body{
   padding-left: 10%;
   padding-right: 10%;
-  background-color: white;
+  background-color: rgb(188, 255, 193);
   color: black;
   text-align: center;
 }
 
 .btn--syntax,
 button.btn--teal{
-  color: white;
-  background-color: teal;
+  color: teal;
+  background-color: rgb(179, 236, 221);
+  border-color:teal
 }
 
 .btn--thistle,
@@ -29,4 +30,7 @@ button.btn--thistle{
 
 .form-group{
   color: teal;
+}
+main{
+  background-color: rgb(99, 153, 197);
 }

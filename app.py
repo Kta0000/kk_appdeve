@@ -67,10 +67,23 @@ def detail(id):
     return render_template('detail.html', details=details)
 
 #備蓄品の編集
-@app.route('/detail/hensyu/<int:id>')
+@app.route('/detail/hensyu/<int:id>', methods=['GET'])
 def hensyu(id):
     hensyus = db.session.query(BousaiItem).get(id)
     return render_template('hensyu.html', hensyus=hensyus)
+
+#編集完了画面
+@app.route('/detail/hensyu/<int:id>', methods=['POST'])
+def finish(id):
+    finishs = db.session.query(BousaiItem).get(id)
+    finishs.category = request.form['genre_h']
+    finishs.name = request.form['name_h']
+    finishs.number = request.form['number_h']
+    db.session.commit()
+    db.session.close()
+    finishs_after = db.session.query(BousaiItem).get(id)
+    return render_template('hensyu.html', finishs_after=finishs_after, finishs=finishs) 
+    # f'カテゴリーを{finishs.category}、名前を{finishs.name}、数量を{finishs.number}に変更しました。'
 
 #マップへの分岐
 @app.route('/map')

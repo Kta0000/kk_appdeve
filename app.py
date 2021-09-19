@@ -83,7 +83,10 @@ def finish(id):
     db.session.close()
     finishs_after = db.session.query(BousaiItem).get(id)
     return render_template('hensyu.html', finishs_after=finishs_after, finishs=finishs) 
-    # f'カテゴリーを{finishs.category}、名前を{finishs.name}、数量を{finishs.number}に変更しました。'
+
+@app.route('/delete')
+def delete():
+    return render_template('delete.html')
 
 #マップへの分岐
 @app.route('/map')

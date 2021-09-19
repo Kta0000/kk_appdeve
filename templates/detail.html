@@ -122,7 +122,21 @@
              <td>2024／04／03</td>
            </tr>
       </table>
+      
       <a href="/detail/hensyu/{{ details.id }}">編集する</a>
+      <input type="button" value="削除する" onclick="MoveCheck();">
+
+      <script>
+            function MoveCheck() {
+          if( confirm("本当に削除しますか？") ) {
+              window.location.href = "/delete";
+          }
+          else {
+              alert("移動をやめました。");
+          }
+      }
+      </script>
+      
     </main>
 
     <footer>

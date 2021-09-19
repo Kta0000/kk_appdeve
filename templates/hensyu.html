@@ -53,60 +53,69 @@
   </head>
 
   <body>
-    <h1>備蓄品編集フォーム</h1>
+    {% if finishs_after != finishs %}
+      
+      <p>{{ finishs_after.category }}に変更しました。</p>
+      <p>{{ finishs_after.name }}に変更しました。</p>
+      <p>{{ finishs_after.number }}に変更しました。</p>
+      <button class="btn btn--syntax" type="button" onclick="location.href='/'">管理へ戻る</button>
+    {% else %}
+      <h1>備蓄品編集フォーム</h1>
 
-    <p></p>
+      <p></p>
 
-        <!-- 備蓄書き込み完了への移動を宣言　-->
-        <form action='/kakikomi' method='post'>
+          <!-- 備蓄書き込み完了への移動を宣言　-->
+          <form method='post'>
 
-          <div class="form-group">
-            <!-- ジャンルをプルダウン選択なら変更の必要 -->
-              <label for='genre'>ジャンルリスト</label>
-              <select class="form-control" name="genre" id="genre" placeholder="{{ hensyus.category }}">
-                <option>飲食物</option>
-                <option>装備・道具</option>
-                <option>衛生・救急</option>
-                <option>防寒・衣料品</option>
-                <option>その他</option>
-              </select>
-          </div>
+            <div class="form-group">
+              <!-- ジャンルをプルダウン選択なら変更の必要 -->
+                <label for='genre'>ジャンルリスト</label>
+                <select class="form-control" name="genre_h" id="genre" placeholder="{{ hensyus.category }}">
+                  <option>飲食物</option>
+                  <option>装備・道具</option>
+                  <option>衛生・救急</option>
+                  <option>防寒・衣料品</option>
+                  <option>その他</option>
+                </select>
+            </div>
 
-            <p></p>
-   
-          <div class="form-group">
-            <label for='name'>備蓄品名</label>
-              <input type='text' class="form-control" name='name' id="name" placeholder="{{ hensyus.name }}">
-          </div>
-            
-            <p></p>
-          
-          <div class="form-group">
-            <label for='number'>備蓄数</label>
-              <input type='text' class="form-control" name='number' id="number" placeholder="{{ hensyus.number }}">
-          </div>
-            
-            <p></p>
-            <!-- 使用期限をカレンダー読み取りなら変更の必要 -->
-          <div class="form-group">
-            <label for='limit'>使用期限・消費期限</label><br>
-            <input type='date' name='limit' id="limit">
-          </div>
-            
-            <p></p>
-
-          <button  class="btn btn--teal" type="submit" name="tuika" value="新規備蓄品">編集する</button>
-        </form>
-
-    <!-- 編集ボタン -->
-  
-    <!-- キャンセルボタンの追加の必要→ボタン設置済→ボタン押すと備蓄品一覧に遷移 -->
-    <button class="btn btn--syntax" type="button" onclick="location.href='/detail/{{ hensyus.id }}'">キャンセル</button>
-
-    <!-- リセットボタン -->
-    <button class="btn btn--syntax" type="reset">リセット</button><br>
-    <p></p>
+              <p></p>
     
+            <div class="form-group">
+              <label for='name'>備蓄品名</label>
+                <input type='text' class="form-control" name='name_h' id="name" placeholder="{{ hensyus.name }}">
+            </div>
+              
+              <p></p>
+            
+            <div class="form-group">
+              <label for='number'>備蓄数</label>
+                <input type='text' class="form-control" name='number_h' id="number" placeholder="{{ hensyus.number }}">
+            </div>
+              
+              <p></p>
+              <!-- 使用期限をカレンダー読み取りなら変更の必要 -->
+            <div class="form-group">
+              <label for='limit'>使用期限・消費期限</label><br>
+              <input type='date' name='limit_h' id="limit">
+            </div>
+              
+              <p></p>
+
+            <!-- 編集ボタン -->
+            <button  class="btn btn--teal" type="submit" name="hensyu" value="新規備蓄品">編集する</button>
+          </form>
+
+  
+      <!-- キャンセルボタンの追加の必要→ボタン設置済→ボタン押すと備蓄品一覧に遷移 -->
+      <button class="btn btn--syntax" type="button" onclick="location.href='/'">キャンセル</button>
+
+      <!-- リセットボタン -->
+      <button class="btn btn--syntax" type="reset">リセット</button><br>
+      <p></p>
+    {% endif %}
+    
+
   </body>
     
   

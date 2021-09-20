@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="static/css/detail.css">
+    <!--<link rel="stylesheet" href="static/css/detail.css">-->
     <title>備蓄品詳細</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +21,7 @@
         top: 0px;
         left: 0px;
         width: 100%;
-        height: 100px;
+        height: 70px;
         background: teal;
         color: white;
         display: flex;
@@ -49,7 +49,7 @@
       main {
         text-align: center;
         width: 100%;
-        padding: 160px 0 160px 0;
+        padding: 100px 0 80px 0;
       }
 
       #maintable{
@@ -90,6 +90,28 @@
         display: inline-block;
         margin: 0 20px;
       }
+      .item {
+        margin: 0.8%;
+      }
+      .button {
+        display       : inline-block;
+        border-radius : 5%;          /* 角丸       */
+        font-size     : 18pt;        /* 文字サイズ */
+        text-align    : center;      /* 文字位置   */
+        cursor        : pointer;     /* カーソル   */
+        padding       : 12px 12px;   /* 余白       */
+        background    : rgba(102, 102, 255, 0.75);     /* 背景色     */
+        color         : #ffffff;     /* 文字色     */
+        line-height   : 1em;         /* 1行の高さ  */
+        transition    : .3s;         /* なめらか変化 */
+        box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+        border        : 2px solid rgba(102, 102, 255, 0.75);    /* 枠の指定 */
+      }
+      .button:hover {
+        box-shadow    : none;        /* カーソル時の影消去 */
+        color         : rgba(102, 102, 255, 0.75);     /* 背景色     */
+        background    : #ffffff;     /* 文字色     */
+      }
     </style>
   </head>
 
@@ -122,9 +144,10 @@
              <td>2024／04／03</td>
            </tr>
       </table>
-      
-      <a href="/detail/hensyu/{{ details.id }}">編集する</a>
-      <a href="/detail/hensyu/delete/{{ details.id }}">削除する</a>
+      <div class=item>
+        <a class='button' href="/detail/hensyu/{{ details.id }}">編集する</a>
+        <a class='button' href="/detail/hensyu/delete/{{ details.id }}">削除する</a>
+      </div>
       
     </main>
 

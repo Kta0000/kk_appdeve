@@ -1,19 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    main {
+      background-color: ghostwhite;
+    }
+    .btn--orange,
+    a.btn--orange {
+      color: #fff;
+      background-color: #eb6100;
+      float: left;
+      margin-right: 10px;
+    }
+    .btn--orange:hover,
+    a.btn--orange:hover {
+      color: #fff;
+      background: #f56500;
+    }
+
+    a.btn--radius {
+      border-radius: 100vh;
+    }
+    a.btn--radius {
+      border-radius: 100vh;
+    }
+    a.btn-border {
+      border: 2px solid #000;
+      border-radius: 0;
+      background: #fff;
+      text-decoration: none;
+    }
+
+    a.btn-border:hover {
+      color: #fff;
+      background: #000;
+    }
+  </style>
 </head>
 <body>
   <main>
     <h1>備蓄品の削除の確認</h1>
-    <p>{{ deletes.name }}を本当に削除しますか？<a href="/">戻る</a></p>
-
-    <form method="post">
-      <button type="submit" class="btn btn-primary">備蓄品の削除</button>
-    </form>
+    <p>{{ deletes.name }}を本当に削除しますか？</p>
+    <div class="item">
+      <form method="post">
+        <button class="btn btn--orange btn--radius" type="submit" class="btn btn-primary">備蓄品の削除</button>
+      </form>
+      <a class="btn btn-border" href="/">戻る</a>
+    </div>
   </main>
   
 </body>

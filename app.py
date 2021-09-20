@@ -1,12 +1,14 @@
 #でコメント
 
 # from re import A
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, DateTime
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
 import codecs
+
+from werkzeug.utils import redirect
 
 
 app = Flask(__name__)
@@ -84,9 +86,21 @@ def finish(id):
     finishs_after = db.session.query(BousaiItem).get(id)
     return render_template('hensyu.html', finishs_after=finishs_after, finishs=finishs) 
 
-@app.route('/delete')
-def delete():
-    return render_template('delete.html')
+#削除完了画面
+@app.route('/detail/hensyu/delete/<int:id>', methods=['GET', 'POST'])
+def delete(id):
+    deletes = db.session.query(BousaiItem).get(id)
+    #書籍削除確認画面に遷移
+    if request.method == 'GET':
+        return render_template('delete.html', deletes=deletes, title='備蓄品の削除')
+    
+    #書籍の削除処理
+    db.session.delete(deletes)
+    db.session.commit()
+    db.session.close()
+    #備蓄品管理画面へ遷移
+    flash('備蓄品が削除されました', category='alert alert-info')
+    return redirect('/')
 
 #マップへの分岐
 @app.route('/map')

@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  margin-top: 10%;
+}
+.container h1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+.container p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+.container button {
+  margin-left: 50%;
+  margin-right: 50%;
+  width: 60px;
+}

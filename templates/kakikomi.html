@@ -5,20 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/kakikomi.css">
     <title>Document</title>
   </head>
   <body>
-      <h1>追加しました</h1>
-      {% for BousaiItem_info in BousaiItem_infos%}
-
-        <p>{{BousaiItem_info.category}}</p>
-        <p>{{BousaiItem_info.name}}</p>
-        <p>{{BousaiItem_info.number}}</p>
-        
-      {% endfor %}
-      <form action='/' method='get'>
-          <button type='submit'>戻る</button>
-      </form>
+    <main>
+      <div class="container">
+        <h1>追加しました</h1>
+        <p>カテゴリー：{{ category }}</p>
+        <p>名前:       {{ name }}</p>
+        <p>数量：      {{ number }}</p>
+        <form action='/' method='get'>
+            <button type='submit'>戻る</button>
+        </form>
+      </div>
+    </main>
   </body>
 </html>
 

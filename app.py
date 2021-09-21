@@ -58,9 +58,9 @@ def bitikukakikomi():
         db.session.add(flask)
         db.session.commit()
         db.session.close()
-        BousaiItem_infos = db.session.query(BousaiItem.id, BousaiItem.category, BousaiItem.name, BousaiItem.number).all()
+        # BousaiItem_infos = db.session.query(BousaiItem.id, BousaiItem.category, BousaiItem.name, BousaiItem.number).all()
         # , BousaiItem.limit
-        return render_template('kakikomi.html', BousaiItem_infos = BousaiItem_infos)
+        return render_template('kakikomi.html', category=category, name=name, number=number)
     
 #備蓄品の詳細
 @app.route('/detail/<int:id>')
